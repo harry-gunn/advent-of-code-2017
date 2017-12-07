@@ -15,17 +15,17 @@ object DayOne extends App {
       .sum
   }
 
-  def getAdjacentList(numString:String) = {
-    val getFirstAndLastDigits = List(List(numString.last.asDigit, numString.head.asDigit))
+  def getAdjacentList(numString:String): List[List[Int]] = {
+    val firstAndLastDigits = List(List(numString.last.asDigit, numString.head.asDigit))
 
     numString
       .map(_.asDigit)
       .sliding(2)
       .toList
-      .map(x => x.toList) ::: getFirstAndLastDigits
+      .map(_.toList) ::: firstAndLastDigits
   }
 
-  def getOppositeList(numString:String) = {
+  def getOppositeList(numString:String): List[List[Int]] = {
     val halfLength = numString.length / 2
     val numbers = numString.map(_.asDigit).zipWithIndex
     def getOppositeValue(index: Int) = if(index < halfLength) numbers(index+halfLength)._1 else numbers(index-halfLength)._1
