@@ -2,6 +2,21 @@ import org.scalatest.{FlatSpec, Matchers}
 
 class DayTwoSpec extends FlatSpec with Matchers {
 
+  behavior of "calculateTotalOfDivisibleValues"
+
+  it should "calculate the total of evenly divisible values" in {
+    DayTwo.calculateTotalOfDivisibleValues(List(List(5, 9, 2, 8), List(9, 4, 7, 3), List(3, 8, 6, 5))) shouldBe 9
+  }
+
+  behavior of "calculateEvenlyDivisibleValues"
+
+  it should "calculate the evenly divisible values" in {
+    DayTwo.findEvenlyDivisibleValues(List(5, 9, 2, 8)) shouldBe (8, 2)
+    DayTwo.findEvenlyDivisibleValues(List(9, 4, 7, 3)) shouldBe (9, 3)
+    DayTwo.findEvenlyDivisibleValues(List(3, 8, 6, 5)) shouldBe (6, 3)
+
+  }
+
   behavior of "calculateChecksum"
 
   it should "calculate the total checksum" in {
