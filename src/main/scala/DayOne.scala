@@ -1,9 +1,11 @@
+import utils.FileReader
+
 import scala.io.Source
 
 object DayOne extends App {
 
-  val filename = "src/main/resources/input"
-  val input = Source.fromFile(s"$filename").getLines.next()
+  val filename = "DayOneInput"
+  val input = FileReader.getInput(filename).head
 
   println(s"Part 1: ${sumDigits(getAdjacentList(input))}")
   println(s"Part 2: ${sumDigits(getOppositeList(input))}")
