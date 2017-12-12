@@ -2,6 +2,16 @@ import org.scalatest.{FlatSpec, Matchers}
 
 class DayThreeSpec  extends FlatSpec with Matchers {
 
+
+  behavior of "calculateDistanceFromCorner"
+
+  it should "return the distance from the number to the nearest corner" in {
+    DayThree.calculateDistanceFromCorner(1, 1) shouldBe 0
+    DayThree.calculateDistanceFromCorner(23, 25) shouldBe 2
+    DayThree.calculateDistanceFromCorner(12, 25) shouldBe 1
+    DayThree.calculateDistanceFromCorner(80, 81) shouldBe 1
+  }
+
   behavior of "calculateManhattanDistance"
 
   it should "calculate the complete manhattan distance" in {
